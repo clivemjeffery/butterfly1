@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS 3D Butterfly by Michael Bromley</title>
+    <meta property="description" content="A demonstration built with CSS 3D transforms, CSS animations, and a little JavaScript." />
+    <script src="vendor/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="page.css">
+    <style>
+      .container {
+    position: absolute;
+    top: 100px;
+}
+.wing {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: flap 0.3s linear infinite alternate;
+    width: 50px;
+    height: 100px;
+    background-image: url("wings/wing1.png");
+}
+.left {
+    transform-origin: right center;
+    transform: scaleX(-1);
+}
+.right {
+    transform-origin: left center;
+    left: 106px;
+    animation-direction: alternate-reverse;
+}
+
+.body {
+    width: 6px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: #333;
+    position: absolute;
+    left: 100px;
+    top: 35px;
+}
+
+.head {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    left: 98px;
+    top: 80px;
+}
+.head:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background-color: #333;
+    transform: rotateX(34deg) rotateZ(20deg) translateY(20px);
+    top: -12px;
+    left: 3px;
+}
+.head:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background-color: #333;
+    transform: rotateX(34deg) rotateZ(-20deg) translateY(20px);
+    top: -12px;
+    left: 6px;
+}
+    </style>
+</head>
+<body>
+  <div id="b1" class="container" style="left: 100px; top: 100px;">
+      <div  class="hover-container">
+          <div class="left wing"></div>
+          <div class="right wing"></div>
+          <div class="body"></div>
+          <div class="head"></div>
+      </div>
+  </div>
+  <div id="b2" class="container" style="left: 200px; top: 200px;">
+      <div  class="hover-container">
+          <div class="left wing"></div>
+          <div class="right wing"></div>
+          <div class="body"></div>
+          <div class="head"></div>
+      </div>
+  </div>
+</body>
+</html>
